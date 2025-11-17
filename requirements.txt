@@ -1,9 +1,9 @@
-[cite_start]flask==3.0.0 [cite: 623]
-[cite_start]flask-cors==4.0.0 [cite: 623]
-[cite_start]numpy==1.24.3 [cite: 623]
-[cite_start]pandas==2.0.3 [cite: 623]
-[cite_start]scikit-learn==1.3.0 [cite: 623]
-[cite_start]joblib==1.3.2 [cite: 623]
-[cite_start]shap==0.42.1 [cite: 623]
-[cite_start]matplotlib==3.7.2 [cite: 623]
+flask==3.0.0
+flask-cors==4.0.0
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn==1.3.0
+joblib==1.3.2
+shap==0.42.1
+matplotlib==3.7.2
 gunicorn
