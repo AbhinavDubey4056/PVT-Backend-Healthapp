@@ -1,9 +1,11 @@
 flask==3.0.0
 flask-cors==4.0.0
-numpy==1.24.3
+# Update numpy to a version compatible with sk-learn 1.7.0
+# The original file was trained with a version matching sklearn 1.7.0 (likely >1.26)
+numpy>=1.26.0
 pandas==2.0.3
-scikit-learn==1.3.0
-joblib==1.3.2
+scikit-learn==1.7.0  # MUST match the version used to save the model (1.7.0 from log)
+joblib>=1.3.0        # Newer version for compatibility
 shap==0.42.1
 matplotlib==3.7.2
 gunicorn
