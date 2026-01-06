@@ -28,8 +28,8 @@ symptom_columns = joblib.load("symptom_columns.pkl")
 s3_client = boto3.client(
     's3',
     region_name=os.environ.get('AWS_REGION', 'ap-south-1'),
-    aws_access_key_id='AKIAU7YUYBPKDLO7AVPT',
-    aws_secret_access_key='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'
+    aws_access_key_id='idhar access key',
+    aws_secret_access_key='idhar secret access key dalna '
 )
 S3_BUCKET = 'healthapp-ai'
 
@@ -40,14 +40,14 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # -------------------------------------------------------
-# Preload SHAP Explainer
+# Preload SHAP Explainer(waise to kisi kam ka nahi h par acha look deta hai)
 # -------------------------------------------------------
 background = pd.DataFrame(np.zeros((1, len(symptom_columns))), columns=symptom_columns)
 explainer = shap.Explainer(model, background)
 
 
 # -------------------------------------------------------
-# DISEASE PREDICTION API ROUTE
+# DISEASE PREDICTION API ROUTE(prediction wali route h yeh)
 # -------------------------------------------------------
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -61,7 +61,7 @@ def predict():
     input_df = pd.DataFrame([input_vec], columns=symptom_columns)
 
     # -------------------------------------------------------
-    # Prediction
+    # Prediction(main prediction line)
     # -------------------------------------------------------
     prediction = model.predict(input_df)[0]
 
@@ -123,7 +123,7 @@ def predict():
         "shap": top_shap
     })
 
-
+# yaha se aws ka system acche level ka start hora but ise google cloud me convert krna h for hackathon 
 # -------------------------------------------------------
 # S3 UPLOAD ENDPOINT
 # -------------------------------------------------------
